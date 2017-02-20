@@ -18,7 +18,15 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    public static RecyclopediaDBHelper dbHelper;
+
+    public static ArrayList<Game> gameList = new ArrayList<Game>();
+
+    public static int expandOpened = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,15 +42,27 @@ public class MainActivity extends AppCompatActivity {
         Button text_game = (Button) findViewById(R.id.button_game);
         Button text_calendar = (Button) findViewById(R.id.button_calendar);
 
+        dbHelper = new RecyclopediaDBHelper(this, RecyclopediaContract.RecyclopediaEntry.DBNAME, 1);
+        gameList = dbHelper.getAllQuestions();
+
+
         text_game.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Intent i = new Intent(getApplicationContext(), GameActivity.class);
-                startActivity(i);
+                Intent gameIntent = new Intent(getApplicationContext(), GameActivity.class);
+                gameIntent.putExtra("counter", 0);  // set the counter to zero since this is our first time playing the game
+                gameIntent.putExtra("score", 0);    // set the score to zero, too
+                gameIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(gameIntent);
             }
         });
 
+    }
+
+    public static ArrayList<Game> getGameList () {
+        return gameList; // retrieve the list of games here in the database
+        // I did this to prevent recursive calls to the database, as Android Studio called me out on that one.
     }
 
     @Override
