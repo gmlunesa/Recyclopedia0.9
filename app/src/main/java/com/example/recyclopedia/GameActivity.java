@@ -49,7 +49,12 @@ public class GameActivity extends AppCompatActivity {
 
         /* Retrieval of a question part */
         gameList = MainActivity.getGameList();              // get an arraylist containing all questions from the databse
-        rand = 0 + (int)(Math.random() * ((13 - 0) + 1));   // get a random number
+        rand = 0 + (int)(Math.random() * ((13 - 0) + 1));
+
+        while(!MainActivity.doneItems.isEmpty() && MainActivity.doneItems.contains(rand)) {
+            rand = 0 + (int)(Math.random() * ((13 - 0) + 1));   // get a random number
+        }
+        MainActivity.doneItems.add(rand);
 
         Intent intent = getIntent();                        // set an intent
         score = intent.getIntExtra("score", 0);             // retrieve the current score as well as the counter on how many times

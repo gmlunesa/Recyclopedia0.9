@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     public static RecyclopediaDBHelper dbHelper;
 
     public static ArrayList<Game> gameList = new ArrayList<Game>();
+    public static ArrayList<Integer> doneItems = new ArrayList<Integer>();
 
     public static int expandOpened = 0;
 

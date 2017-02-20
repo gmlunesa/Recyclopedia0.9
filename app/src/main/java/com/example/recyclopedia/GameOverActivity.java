@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class GameOverActivity extends AppCompatActivity {
 
     // initiliaze the views for this activity
@@ -33,6 +35,8 @@ public class GameOverActivity extends AppCompatActivity {
 
         Intent in = getIntent();//initialize an intent
         score_textview.setText("" + in.getIntExtra("score", 0));    // since the game is already over, post the score
+
+        MainActivity.doneItems = new ArrayList<Integer>();
 
         home_btn.setOnClickListener(new View.OnClickListener() {
             @Override
