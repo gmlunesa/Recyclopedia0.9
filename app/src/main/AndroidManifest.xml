@@ -47,6 +47,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.recyclopedia.MainActivity" />
         </activity>
+        <activity
+            android:name=".GameOverActivity"
+            android:label="@string/title_activity_game_over"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
