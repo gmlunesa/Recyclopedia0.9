@@ -13,4 +13,6 @@
     <string name="applogo">AppLogo</string>
     <string name="logoimage">logoImage</string>
     <string name="logo">logo</string>
+    <string name="title_activity_game">GameActivity</string>
+    <string name="action_settings">Settings</string>
 </resources>
