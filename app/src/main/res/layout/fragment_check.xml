@@ -28,7 +28,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/result"
             style="@style/TextAppearance.AppCompat.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
             android:text="Freddie Mercury"/>
 
         <ImageView
-            android:id="@+id/comic_image"
+            android:id="@+id/result_image"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/game_image_size"
             android:layout_marginBottom="@dimen/game_image_margin_vertical"
@@ -48,7 +48,7 @@
             android:src="@drawable/logo"/>
 
         <TextView
-            android:id="@+id/description"
+            android:id="@+id/result_details"
             style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -62,9 +62,10 @@
         <Button
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:text="New Button"
-            android:id="@+id/button"
-            android:layout_gravity="center_horizontal" />
+            android:text="@string/cont"
+            android:id="@+id/result_button"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/buttonColor"/>
 
     </LinearLayout>
 
