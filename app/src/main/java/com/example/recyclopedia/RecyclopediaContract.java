@@ -66,12 +66,6 @@ public class RecyclopediaContract {
 
         /***/
 
-
-
-
-
-
-
     }
 
 

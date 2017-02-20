@@ -38,6 +38,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.recyclopedia.MainActivity" />
         </activity>
+        <activity
+            android:name=".CheckActivity"
+            android:label="@string/title_activity_check"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.recyclopedia.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

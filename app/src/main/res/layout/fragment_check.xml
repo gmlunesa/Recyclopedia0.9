@@ -1,3 +1,4 @@
+
 <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,7 +19,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     tools:ignore="RtlHardcoded"
-    tools:context="com.example.recyclopedia.GameActivityFragment">
+    tools:context="com.example.recyclopedia.CheckActivityFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +28,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/game_name"
+            android:id="@+id/name"
             style="@style/TextAppearance.AppCompat.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,7 +37,7 @@
             android:text="Freddie Mercury"/>
 
         <ImageView
-            android:id="@+id/game_image"
+            android:id="@+id/comic_image"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/game_image_size"
             android:layout_marginBottom="@dimen/game_image_margin_vertical"
@@ -46,33 +47,24 @@
             android:scaleType="centerCrop"
             android:src="@drawable/logo"/>
 
+        <TextView
+            android:id="@+id/description"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginBottom="@dimen/game_description_margin_bottom"
+            android:layout_marginLeft="@dimen/game_description_margin_left"
+            android:layout_marginRight="@dimen/game_description_margin_right"
+            android:layout_marginTop="0dp"
+            android:autoLink="web"
+            android:text="Freddie Mercury Rage Pose is a rage comic character made from a photo of deceased British musician and former lead vocalist for the rock band Queen Freddie Mercury. The image is typically used to indicate that an extraordinary feat has been accomplished, similar to the F!@# Yea illustration."/>
 
         <Button
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:text="@string/bio"
-            android:id="@+id/button_bio"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="15dp"
-            android:background="@color/buttonColor" />
-
-        <Button
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:text="@string/nonbio"
-            android:id="@+id/button_nonbio"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="15dp"
-            android:background="@color/buttonColor" />
-
-        <Button
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:text="@string/rec"
-            android:id="@+id/button_rec"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="15dp"
-            android:background="@color/buttonColor" />
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="New Button"
+            android:id="@+id/button"
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 

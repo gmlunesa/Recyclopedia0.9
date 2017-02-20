@@ -15,4 +15,11 @@
     <string name="logo">logo</string>
     <string name="title_activity_game">GameActivity</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_check">CheckActivity</string>
+
+    <string name="bio">Biodegradable</string>
+    <string name="nonbio">Non-Biodegradable</string>
+    <string name="rec">Recyclable</string>
+
+    <string name="cont">Continue</string>
 </resources>
