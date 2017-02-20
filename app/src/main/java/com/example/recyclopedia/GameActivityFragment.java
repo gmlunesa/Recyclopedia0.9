@@ -11,7 +11,8 @@ import android.view.ViewGroup;
  */
 public class GameActivityFragment extends Fragment {
 
-    public GameActivityFragment() {
+    public GameActivityFragment newInstance() {
+        return new GameActivityFragment();
     }
 
     @Override

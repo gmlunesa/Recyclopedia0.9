@@ -34,6 +34,15 @@ public class MainActivity extends AppCompatActivity {
         Button text_game = (Button) findViewById(R.id.button_game);
         Button text_calendar = (Button) findViewById(R.id.button_calendar);
 
+        text_game.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent i = new Intent(getApplicationContext(), GameActivity.class);
+                startActivity(i);
+            }
+        });
+
     }
 
     @Override
