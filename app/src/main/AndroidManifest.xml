@@ -47,10 +47,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.recyclopedia.MainActivity" />
         </activity>
+        <activity android:name=".EncyclopediaActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.recyclopedia.MainActivity" />
+        </activity>
         <activity
             android:name=".GameOverActivity"
             android:label="@string/title_activity_game_over"
             android:theme="@style/AppTheme"></activity>
+        <activity android:name=".DetailsActivity"
+            android:parentActivityName=".EncyclopediaActivity"
+            android:theme ="@style/AppTheme">
+            </activity>
+
     </application>
 
 </manifest>

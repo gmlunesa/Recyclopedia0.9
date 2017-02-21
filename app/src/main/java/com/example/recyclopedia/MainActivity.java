@@ -46,7 +46,13 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = new RecyclopediaDBHelper(this, RecyclopediaContract.RecyclopediaEntry.DBNAME, 1);
         gameList = dbHelper.getAllQuestions();
 
-
+        text_enc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent encIntent = new Intent(getApplicationContext(), EncyclopediaActivity.class);
+                startActivity(encIntent);
+            }
+        });
         text_game.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
