@@ -46,6 +46,17 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = new RecyclopediaDBHelper(this, RecyclopediaContract.RecyclopediaEntry.DBNAME, 1);
         gameList = dbHelper.getAllQuestions();
 
+        text_search.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent gameIntent = new Intent(getApplicationContext(), SearchActivity.class);
+                gameIntent.putExtra("counter", 0);  // set the counter to zero since this is our first time playing the game
+                gameIntent.putExtra("score", 0);    // set the score to zero, too
+                gameIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(gameIntent);
+            }
+        });
 
         text_game.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -58,6 +69,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(gameIntent);
             }
         });
+
+        text_calendar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent calIntent = new Intent(getApplicationContext(), AddingSchedActivity.class);
+                calIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(calIntent);
+            }
+        });
+
+
 
     }
 

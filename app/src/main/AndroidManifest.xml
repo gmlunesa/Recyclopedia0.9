@@ -64,6 +64,25 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.recyclopedia.MainActivity" />
         </activity>
+        <activity
+            android:name=".AddingSchedActivity"
+            android:label="@string/title_activity_topic"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.recyclopedia.MainActivity" />
+        </activity>
+        <activity android:name=".GoogleCalendarActivity" />
+        <activity
+            android:name=".SearchActivity"
+            android:label="@string/title_activity_search"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.recyclopedia.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
