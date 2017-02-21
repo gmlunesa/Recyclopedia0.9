@@ -53,6 +53,27 @@ public class RecyclopediaDBHelper extends SQLiteOpenHelper{
         db.execSQL(CREATE_GAME_TABLE);
 
         // Populate the game table.
+        addTopic(db,"Examples of Biodegradable materials","Examples of Biodegradable materials, often referred to as “bio-waste”, include the following:\n" +
+                "\n" +
+                "• Human and animal waste\n" +
+                "• Plant products, wood, paper, food waste, leaves, grass clippings\n" +
+                "• Remains from the death of living creatures\n" +
+                "\n" +
+                "It is very important to note that biodegradable waste can serve to support the future life of other organisms. This waste can be used to provide nourishment and a healthy environment condition for living organisms, which of course includes humans.\n" +
+                "http://sprecycling.com/biodegradable-and-non-biodegradable-materials/\n", "Biodegradable Wastes");
+        addTopic(db, "Examples of Non-Biodegradable Wastes", "Materials having properties that do not breakdown or decay are called Non-biodegradable.\n" +
+                "\n" +
+                "Examples include:\n" +
+                "• Glass\n" +
+                "• Metals\n" +
+                "• Plastics\n" +
+                "• Electronic devices\n" +
+                "• Medical waste\n" +
+                "\n" +
+                "Non-biodegradable materials do not breakdown naturally. But, that doesn’t mean they cannot be reused. The key difference here is that the process requires time, energy and expense. Glass and plastic can be reused to make other products, but the waste must first be separated by type of material and then processed into a usable substance.\n" +
+                "http://sprecycling.com/biodegradable-and-non-biodegradable-materials/\n","Non Biodegradable Wastes");
+        addTopic(db,"Landfill","The Landfill is the most popularly used method of waste disposal used today. This process of waste disposal focuses attention on burying the waste in the land. Landfills are found in all areas. There is a process used that eliminates the odors and dangers of waste before it is placed into the ground. While it is true this is the most popular form of waste disposal it is certainly far from the only" +
+                " procedure and one that may also bring with it an assortment of space.","Methods of Waste Disposal" );
         addTopic(db, "Overview", "This law aims for the reduction of solid waste through source reduction and waste minimization measures, treatment and disposal of solid waste in accordance with ecologically sustainable development principles. (Sec. 2-C)\n" +
                 "It also aims to ensure the proper segregation, collection, transport, storage, treatment and disposal of solid waste through the formulation and adoption of the best environmental practice in ecological waste management excluding incineration.\n" +
                 "It considers “waste as a resource that can be recovered”, emphasizing on recycling, reuse and composting as methods to minimize waste problems.\n", "Ecological Solid Waste Management Act of 2000 (RA 9003)");
@@ -77,8 +98,7 @@ public class RecyclopediaDBHelper extends SQLiteOpenHelper{
                 " groundwater reservoir or watershed area.  ","Ecological Solid Waste Management Act of 2000 (RA 9003)" );
         addTopic(db,"Financing Solid Waste Management","The Act provided a special account in the National Treasury called the Solid Waste Management Fund.  This will be sourced from fines and penalties imposed, proceeds of permits and licenses, donations, endowments, grants and contributions and amount allocated under the annual General Appropriations Act. The Fund will be utilized to finance products, facilities, technologies, and processes that would enhance proper solid waste management; awards and incentives; research programs; " +
                 "information, education, communication and monitoring activities; technical assistance; and capability building activities.","Ecological Solid Waste Management Act of 2000 (RA 9003)" );
-        addTopic(db,"Landfill","The Landfill is the most popularly used method of waste disposal used today. This process of waste disposal focuses attention on burying the waste in the land. Landfills are found in all areas. There is a process used that eliminates the odors and dangers of waste before it is placed into the ground. While it is true this is the most popular form of waste disposal it is certainly far from the only" +
-                " procedure and one that may also bring with it an assortment of space.","Methods of Waste Disposal" );
+
         addTopic(db,"Incineration/Combustion ","Incineration or combustion is a type disposal method in which municipal solid wastes are burned at high temperatures so as as to convert them into residue and gaseous products. The biggest advantage of this type of method is that it can reduce the volume of solid waste to 20 to 30 percent of the original volume, decreases the space they take up and reduce the stress on landfills.","Methods of Waste Disposal" );
         addTopic(db,"Recovery and Recycling ","Resource recovery is the process of taking useful discarded items for a specific next use. These discarded items are then processed to extract or recover materials and resources or convert them to energy in the form of useable heat, electricity or fuel.","Methods of Waste Disposal" );
         addTopic(db,"Republic Act 7160 (Local Government Code)","• Effective 1991\n" +
@@ -94,25 +114,7 @@ public class RecyclopediaDBHelper extends SQLiteOpenHelper{
                 "• Mandates the control and management of the import, manufacture, processing, " +
                 "distribution, use, transport, treatment and disposal of toxic substances and hazardous and nuclear wastes " +
                 "in the country.\n","Examples of Philippine Environmental Laws" );
-        addTopic(db,"Examples of Biodegradable materials","Examples of Biodegradable materials, often referred to as “bio-waste”, include the following:\n" +
-                "\n" +
-                "• Human and animal waste\n" +
-                "• Plant products, wood, paper, food waste, leaves, grass clippings\n" +
-                "• Remains from the death of living creatures\n" +
-                "\n" +
-                "It is very important to note that biodegradable waste can serve to support the future life of other organisms. This waste can be used to provide nourishment and a healthy environment condition for living organisms, which of course includes humans.\n" +
-                "http://sprecycling.com/biodegradable-and-non-biodegradable-materials/\n", "Biodegradable Wastes");
-        addTopic(db, "Examples of Non-Biodegradable Wastes", "Materials having properties that do not breakdown or decay are called Non-biodegradable.\n" +
-                "\n" +
-                "Examples include:\n" +
-                "• Glass\n" +
-                "• Metals\n" +
-                "• Plastics\n" +
-                "• Electronic devices\n" +
-                "• Medical waste\n" +
-                "\n" +
-                "Non-biodegradable materials do not breakdown naturally. But, that doesn’t mean they cannot be reused. The key difference here is that the process requires time, energy and expense. Glass and plastic can be reused to make other products, but the waste must first be separated by type of material and then processed into a usable substance.\n" +
-                "http://sprecycling.com/biodegradable-and-non-biodegradable-materials/\n","Non Biodegradable Wastes");
+
         ContentValues values = new ContentValues();
 
         values.put(RecyclopediaEntry.GAME_COLUMN_ID, 1);
@@ -220,6 +222,45 @@ public class RecyclopediaDBHelper extends SQLiteOpenHelper{
         values.put(RecyclopediaEntry.GAME_COLUMN_IMAGE, "toilet");
         db.insert(RecyclopediaEntry.GAME_TABLE, null, values);
 
+        /*values.put(RecyclopediaEntry.TOPIC_COLUMN_ID, 1);
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_TITLE, "Overview");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_DETAILS, "This law aims for the reduction of solid waste through source reduction and waste minimization measures, treatment and disposal of solid waste in accordance with ecologically sustainable development principles. (Sec. 2-C)\n" +
+                "It also aims to ensure the proper segregation, collection, transport, storage, treatment and disposal of solid waste through the formulation and adoption of the best environmental practice in ecological waste management excluding incineration.\n" +
+                "It considers “waste as a resource that can be recovered”, emphasizing on recycling, reuse and composting as methods to minimize waste problems.\n");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_SUBJECT, "Ecological Solid Waste Management Act of 2000 (RA 9003)\"");
+        db.insert(RecyclopediaEntry.TOPIC_TABLE, null, values);
+
+
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_ID, 2);
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_TITLE, "Waste Characterization and Segregation");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_DETAILS, "The Act provided a special account in the National Treasury called the Solid" +
+                " Waste Management Fund.  This will be sourced from fines and penalties imposed, " +
+                "proceeds of permits and licenses, donations, endowments, grants and contributions" +
+                " and amount allocated under the annual General Appropriations Act. The Fund will be utilized " +
+                "to finance products, facilities, technologies, and processes that would enhance proper solid waste" +
+                " management; awards and incentives; research programs; information, education, communication and monitoring " +
+                "activities; technical assistance; and capability building activities.");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_SUBJECT, "Ecological Solid Waste Management Act of 2000 (RA 9003)");
+        db.insert(RecyclopediaEntry.TOPIC_TABLE, null, values);*/
+
+        /*values.put(RecyclopediaEntry.TOPIC_COLUMN_ID, 3);
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_TITLE, "");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_DETAILS, "");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_SUBJECT, "");
+        db.insert(RecyclopediaEntry.TOPIC_TABLE, null, values);
+
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_ID, 4);
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_TITLE, "");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_DETAILS, "");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_SUBJECT, "");
+        db.insert(RecyclopediaEntry.TOPIC_TABLE, null, values);
+
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_ID, 5);
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_TITLE, "");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_DETAILS, "");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_SUBJECT, "");
+        db.insert(RecyclopediaEntry.TOPIC_TABLE, null, values);*/
+
         //db.close();
 
     }
@@ -245,41 +286,55 @@ public class RecyclopediaDBHelper extends SQLiteOpenHelper{
         db.insert(RecyclopediaEntry.TOPIC_TABLE, null, values);
     }
 
+
     // this method returns all the questions stored in the database
     public ArrayList<Game> getAllQuestions () {
-
         ArrayList<Game> gameList = new ArrayList<Game>();
-
         String selectQuery = "SELECT * FROM " + RecyclopediaEntry.GAME_TABLE;
-
         SQLiteDatabase db = this.getWritableDatabase();
-
         Cursor cursor = db.rawQuery(selectQuery, null);
-
         // parse the returned data from the database
         if (cursor.moveToFirst()) {
-
             do {
-
                 // make a new game object
                 Game item = new Game();
-
                 // store the details from the DB to the object
                 item.setGameID(Integer.parseInt(cursor.getString(0)));
                 item.setGameItem(cursor.getString(1));
                 item.setGameItemType(Integer.parseInt(cursor.getString(2)));
                 item.setGameDetails(cursor.getString(3));
                 item.setGameImage(cursor.getString(4));
-
                 // add the object to the arraylist that will be returned by this function
                 gameList.add(item);
-
                 // Adding contact to list
-
             } while (cursor.moveToNext());
-
         }
         return gameList;
+    }
+
+    // this method returns all the questions stored in the database
+    public ArrayList<Topic> getAllTopics () {
+        ArrayList<Topic> topicList = new ArrayList<Topic>();
+        String selectQuery = "SELECT * FROM " + RecyclopediaEntry.TOPIC_TABLE;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        // parse the returned data from the database
+        if (cursor.moveToFirst()) {
+            do {
+                // make a new game object
+                Topic item = new Topic();
+                // store the details from the DB to the object
+                item.setTopicID(Integer.parseInt(cursor.getString(0)));
+                item.setTopicTitle(cursor.getString(1));
+                item.setTopicDetails(cursor.getString(2));
+                item.setTopicSubject(cursor.getString(3));
+
+                // add the object to the arraylist that will be returned by this function
+                topicList.add(item);
+                // Adding contact to list
+            } while (cursor.moveToNext());
+        }
+        return topicList;
     }
 
     // this method adds a row in the topic table

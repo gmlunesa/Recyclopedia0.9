@@ -20,15 +20,15 @@ android:theme="@style/AppTheme.AppBarOverlay"
 </android.support.design.widget.AppBarLayout>
 
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:id="@+id/Backbutt"
-        android:layout_marginBottom="31dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+    <!--<Button-->
+        <!--style="?android:attr/buttonStyleSmall"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Back"-->
+        <!--android:id="@+id/Backbutt"-->
+        <!--android:layout_marginBottom="31dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true" />-->
 
     <ExpandableListView
             android:id="@+id/exp_list"

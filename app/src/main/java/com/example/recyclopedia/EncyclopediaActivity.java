@@ -36,9 +36,9 @@ public class EncyclopediaActivity extends AppCompatActivity {
 
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
-            getSupportActionBar().setTitle("Game");
+            getSupportActionBar().setTitle("Recyclopedia");
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            Button backButton = (Button) findViewById(R.id.Backbutt);
+            //Button backButton = (Button) findViewById(R.id.Backbutt);
 //            backButton.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View v) {
@@ -62,6 +62,7 @@ public class EncyclopediaActivity extends AppCompatActivity {
                                             int groupPosition, int childPosition, long id) {
                     final String selected = (String) explistAdapter.getChild(
                             groupPosition, childPosition);
+                    final String topic = (String) explistAdapter.getGroup(groupPosition);
 
                     Toast.makeText(getBaseContext(), selected, Toast.LENGTH_LONG)
                             .show();
@@ -69,6 +70,7 @@ public class EncyclopediaActivity extends AppCompatActivity {
                     in.putExtra("listPos", groupPosition);
                     in.putExtra("childPos", childPosition);
                     in.putExtra("notes", dbHelper.getDetails(selected));
+                    in.putExtra("title", topic);
                     startActivity(in);
 
                     return true;
