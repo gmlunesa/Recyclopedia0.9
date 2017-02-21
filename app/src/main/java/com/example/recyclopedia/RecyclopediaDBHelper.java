@@ -161,6 +161,45 @@ public class RecyclopediaDBHelper extends SQLiteOpenHelper{
         values.put(RecyclopediaEntry.GAME_COLUMN_IMAGE, "toilet");
         db.insert(RecyclopediaEntry.GAME_TABLE, null, values);
 
+        /*values.put(RecyclopediaEntry.TOPIC_COLUMN_ID, 1);
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_TITLE, "Overview");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_DETAILS, "This law aims for the reduction of solid waste through source reduction and waste minimization measures, treatment and disposal of solid waste in accordance with ecologically sustainable development principles. (Sec. 2-C)\n" +
+                "It also aims to ensure the proper segregation, collection, transport, storage, treatment and disposal of solid waste through the formulation and adoption of the best environmental practice in ecological waste management excluding incineration.\n" +
+                "It considers “waste as a resource that can be recovered”, emphasizing on recycling, reuse and composting as methods to minimize waste problems.\n");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_SUBJECT, "Ecological Solid Waste Management Act of 2000 (RA 9003)\"");
+        db.insert(RecyclopediaEntry.TOPIC_TABLE, null, values);
+
+
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_ID, 2);
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_TITLE, "Waste Characterization and Segregation");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_DETAILS, "The Act provided a special account in the National Treasury called the Solid" +
+                " Waste Management Fund.  This will be sourced from fines and penalties imposed, " +
+                "proceeds of permits and licenses, donations, endowments, grants and contributions" +
+                " and amount allocated under the annual General Appropriations Act. The Fund will be utilized " +
+                "to finance products, facilities, technologies, and processes that would enhance proper solid waste" +
+                " management; awards and incentives; research programs; information, education, communication and monitoring " +
+                "activities; technical assistance; and capability building activities.");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_SUBJECT, "Ecological Solid Waste Management Act of 2000 (RA 9003)");
+        db.insert(RecyclopediaEntry.TOPIC_TABLE, null, values);*/
+
+        /*values.put(RecyclopediaEntry.TOPIC_COLUMN_ID, 3);
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_TITLE, "");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_DETAILS, "");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_SUBJECT, "");
+        db.insert(RecyclopediaEntry.TOPIC_TABLE, null, values);
+
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_ID, 4);
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_TITLE, "");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_DETAILS, "");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_SUBJECT, "");
+        db.insert(RecyclopediaEntry.TOPIC_TABLE, null, values);
+
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_ID, 5);
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_TITLE, "");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_DETAILS, "");
+        values.put(RecyclopediaEntry.TOPIC_COLUMN_SUBJECT, "");
+        db.insert(RecyclopediaEntry.TOPIC_TABLE, null, values);*/
+
         //db.close();
 
     }
@@ -178,43 +217,54 @@ public class RecyclopediaDBHelper extends SQLiteOpenHelper{
         db.close();
     }
 
-
-
     // this method returns all the questions stored in the database
     public ArrayList<Game> getAllQuestions () {
-
         ArrayList<Game> gameList = new ArrayList<Game>();
-
         String selectQuery = "SELECT * FROM " + RecyclopediaEntry.GAME_TABLE;
-
         SQLiteDatabase db = this.getWritableDatabase();
-
         Cursor cursor = db.rawQuery(selectQuery, null);
-
         // parse the returned data from the database
         if (cursor.moveToFirst()) {
-
             do {
-
                 // make a new game object
                 Game item = new Game();
-
                 // store the details from the DB to the object
                 item.setGameID(Integer.parseInt(cursor.getString(0)));
                 item.setGameItem(cursor.getString(1));
                 item.setGameItemType(Integer.parseInt(cursor.getString(2)));
                 item.setGameDetails(cursor.getString(3));
                 item.setGameImage(cursor.getString(4));
-
                 // add the object to the arraylist that will be returned by this function
                 gameList.add(item);
-
                 // Adding contact to list
-
             } while (cursor.moveToNext());
-
         }
         return gameList;
+    }
+
+    // this method returns all the questions stored in the database
+    public ArrayList<Topic> getAllTopics () {
+        ArrayList<Topic> topicList = new ArrayList<Topic>();
+        String selectQuery = "SELECT * FROM " + RecyclopediaEntry.TOPIC_TABLE;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        // parse the returned data from the database
+        if (cursor.moveToFirst()) {
+            do {
+                // make a new game object
+                Topic item = new Topic();
+                // store the details from the DB to the object
+                item.setTopicID(Integer.parseInt(cursor.getString(0)));
+                item.setTopicTitle(cursor.getString(1));
+                item.setTopicDetails(cursor.getString(2));
+                item.setTopicSubject(cursor.getString(3));
+
+                // add the object to the arraylist that will be returned by this function
+                topicList.add(item);
+                // Adding contact to list
+            } while (cursor.moveToNext());
+        }
+        return topicList;
     }
 
     // this method adds a row in the topic table
