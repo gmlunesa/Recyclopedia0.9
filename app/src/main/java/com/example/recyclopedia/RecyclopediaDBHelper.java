@@ -204,7 +204,7 @@ public class RecyclopediaDBHelper extends SQLiteOpenHelper{
         values.put(RecyclopediaEntry.GAME_COLUMN_ID, 13);
         values.put(RecyclopediaEntry.GAME_COLUMN_ITEM, "Human Remains");
         values.put(RecyclopediaEntry.GAME_COLUMN_ITEMTYPE, 1);
-        values.put(RecyclopediaEntry.GAME_COLUMN_DETAILS, "Human remains are biodegradable. The human bod decomposes over time. Some wax them to preserve them.");
+        values.put(RecyclopediaEntry.GAME_COLUMN_DETAILS, "Human remains are biodegradable. The human body decomposes over time. Some wax them to preserve them.");
         values.put(RecyclopediaEntry.GAME_COLUMN_IMAGE, "marcos");
         db.insert(RecyclopediaEntry.GAME_TABLE, null, values);
 
