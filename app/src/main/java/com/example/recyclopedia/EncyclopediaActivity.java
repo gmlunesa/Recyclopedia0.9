@@ -36,7 +36,7 @@ public class EncyclopediaActivity extends AppCompatActivity {
 
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
-            getSupportActionBar().setTitle("Recyclopedia");
+            getSupportActionBar().setTitle(getResources().getString(R.string.title_activity_encyclopedia));
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             //Button backButton = (Button) findViewById(R.id.Backbutt);
 //            backButton.setOnClickListener(new View.OnClickListener() {

@@ -25,16 +25,23 @@ public class HelpActivity extends AppCompatActivity {
         CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
 
         String title = "Help";
-        String detail = "oh okay";
-        String location = "wew lad";
+        String detail = "A very simple Android application that encourages people to reduce, reuse and recycle. The following are the features:\n" +
+                "• Search the database for details about different kinds of trash\n" +
+                "• Read about different topics about recycling in our built-in encylopedia\n" +
+                "• Play an exciting trivia game while learning at the same time" +
+                "• Schedule garbage collection through the calendar";
+        String contact = "We can be contacted through our emails:\n" +
+                "• cggulane@up.edu.ph\n" +
+                "• gmlunesa@up.edu.ph\n" +
+                "• arpacada@up.edu.ph\n";
 
         TextView placeDetail = (TextView) findViewById(R.id.place_detail);
-        TextView placeLocation =  (TextView) findViewById(R.id.place_location);
+        TextView placeContact =  (TextView) findViewById(R.id.place_contact);
         ImageView placePicture = (ImageView) findViewById(R.id.image);
 
         collapsingToolbar.setTitle(title);
         placeDetail.setText(detail);
-        placeLocation.setText(location);
+        placeContact.setText(contact);
 
         placePicture.setImageResource(R.drawable.help);
 

@@ -34,6 +34,7 @@ public class DetailsActivity extends AppCompatActivity {
 
 
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+        getSupportActionBar().setTitle(getResources().getString(R.string.title_activity_details));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Set Collapsing Toolbar layout to the screen

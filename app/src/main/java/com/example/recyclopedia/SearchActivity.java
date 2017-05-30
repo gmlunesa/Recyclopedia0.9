@@ -28,7 +28,9 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        /*getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(getResources().getString(R.string.title_activity_search));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
        /* SearchView simpleSearchView = (SearchView) findViewById(R.id.simpleSearchView); // inititate a search view
         CharSequence query = simpleSearchView.getQuery();

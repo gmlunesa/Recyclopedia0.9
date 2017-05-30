@@ -25,8 +25,8 @@ public class GameOverActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_over);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Game Over");
+        getSupportActionBar().setTitle(getResources().getString(R.string.title_activity_game_over));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // specify the design for the UI objects
         go_textview = (TextView) findViewById(R.id.game_over);

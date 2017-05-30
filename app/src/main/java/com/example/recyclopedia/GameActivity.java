@@ -38,7 +38,7 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Game");
+        getSupportActionBar().setTitle(getResources().getString(R.string.title_activity_game));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         bio_button = (Button) findViewById(R.id.button_bio);

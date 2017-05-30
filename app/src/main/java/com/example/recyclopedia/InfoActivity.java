@@ -24,16 +24,20 @@ public class InfoActivity extends AppCompatActivity{
         CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
 
         String title = "Info";
-        String detail = "The following are the information and stuff like that lad";
-        String location = "Here are our contact details";
+        String detail = "We, the Basurerawwr, think that it's time to help the Filipino people to educate themselves of the importance of proper waste disposal. There is a need for environmental awareness among the citizens so cooperation and responsibility may be achieved. It may be a small step, but every effort counts in helping our environment.\n" +
+                "Our project is open sourced, and could be accessed and forked through our Github repository at http://github.com/gmlunesa/recyclopedia\n";
+        String contact = "We can be contacted through our emails:\n" +
+                "• cggulane@up.edu.ph\n" +
+                "• gmlunesa@up.edu.ph\n" +
+                "• arpacada@up.edu.ph\n";
 
         TextView placeDetail = (TextView) findViewById(R.id.place_detail);
-        TextView placeLocation =  (TextView) findViewById(R.id.place_location);
+        TextView placeContact =  (TextView) findViewById(R.id.place_contact);
         ImageView placePicture = (ImageView) findViewById(R.id.image);
 
         collapsingToolbar.setTitle(title);
         placeDetail.setText(detail);
-        placeLocation.setText(location);
+        placeContact.setText(contact);
 
         placePicture.setImageResource(R.drawable.help);
 

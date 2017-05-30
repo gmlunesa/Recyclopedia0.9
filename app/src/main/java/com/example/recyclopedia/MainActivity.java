@@ -115,11 +115,12 @@ public class MainActivity extends AppCompatActivity {
         // Take appropriate action for each action item click
         switch (item.getItemId()) {
             case R.id.action_help:
-                Intent intent = new Intent(this, HelpActivity.class);
-                this.startActivity(intent);
+                Intent intent_help = new Intent(this, HelpActivity.class);
+                this.startActivity(intent_help);
                 break;
             case R.id.action_info:
-                // check for updates action
+                Intent intent_info = new Intent(this, InfoActivity.class);
+                this.startActivity(intent_info);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

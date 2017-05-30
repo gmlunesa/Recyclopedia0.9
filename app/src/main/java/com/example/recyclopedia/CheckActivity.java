@@ -31,7 +31,7 @@ public class CheckActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Game");
+        getSupportActionBar().setTitle(getResources().getString(R.string.title_activity_check));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // assign the different views
